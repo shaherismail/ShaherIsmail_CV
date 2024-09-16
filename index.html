@@ -11,36 +11,41 @@
             color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
         }
 
         header {
-            background-color: #007bff;
+            background-color: #6a1b9a; /* Light Purple */
             color: #fff;
-            padding: 40px 0;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 5px solid #4a148c; /* Darker Purple */
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
+            font-weight: bold;
         }
 
         header p {
             font-size: 1.2em;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         /* Container Styles */
         .container {
-            width: 80%;
-            max-width: 900px;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
         }
 
         /* Main Content Styles */
         main {
             padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         section {
@@ -48,11 +53,12 @@
         }
 
         h2 {
-            font-size: 1.8em;
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
+            font-size: 2em;
+            color: #6a1b9a; /* Light Purple */
+            border-bottom: 2px solid #6a1b9a; /* Light Purple */
             padding-bottom: 10px;
             margin-bottom: 20px;
+            font-weight: bold;
         }
 
         /* Contact Section */
@@ -61,7 +67,7 @@
         }
 
         .contact a {
-            color: #007bff;
+            color: #6a1b9a; /* Light Purple */
             text-decoration: none;
         }
 
@@ -69,18 +75,54 @@
             text-decoration: underline;
         }
 
+        /* Skills Section */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-category {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5em;
+            color: #6a1b9a; /* Light Purple */
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .skill-list {
+            list-style-type: disc;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        .skill-list li {
+            margin-bottom: 5px;
+        }
+
         /* Experience Section */
         .job {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            background-color: #f3e5f5; /* Light Purple Background */
+            border: 1px solid #e1bee7; /* Slightly Darker Purple */
             border-radius: 8px;
             padding: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .job h3 {
             margin: 0;
-            color: #333;
+            color: #4a148c; /* Darker Purple */
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .job p {
+            margin: 5px 0;
         }
 
         .job ul {
@@ -88,29 +130,13 @@
             margin: 10px 0 0 20px;
         }
 
-        /* Skills Section */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .skill-item {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            width: calc(33% - 10px);
-            text-align: center;
-            font-size: 1em;
-        }
-
         /* Footer Styles */
         footer {
-            background-color: #007bff;
+            background-color: #6a1b9a; /* Light Purple */
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 20px;
+            border-top: 5px solid #4a148c; /* Darker Purple */
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -118,6 +144,13 @@
 
         footer p {
             margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skills {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -131,7 +164,7 @@
 
     <main>
         <section class="contact">
-            <h2>Personal Information</h2>
+            <h2>Personal Information 📍</h2>
             <p>Address: Nasr City, Cairo, Egypt</p>
             <p>Phone: <a href="tel:+201097396281">+201097396281</a></p>
             <p>Email: <a href="mailto:shaherismail9@gmail.com">shaherismail9@gmail.com</a></p>
@@ -140,41 +173,51 @@
         </section>
 
         <section class="languages">
-            <h2>Languages</h2>
+            <h2>Languages 🌐</h2>
             <p>Arabic: Mother Tongue</p>
             <p>English: Excellent</p>
         </section>
 
         <section class="skills">
-            <h2>Key Skills</h2>
-            <div class="skill-item">Communication Skills</div>
-            <div class="skill-item">Problem Solving</div>
-            <div class="skill-item">Time Management</div>
-            <div class="skill-item">Teamwork</div>
-            <div class="skill-item">Leadership Skills</div>
-            <div class="skill-item">Presentation</div>
-            <div class="skill-item">Technical Writing Skills</div>
-            <div class="skill-item">Responsibility</div>
-            <div class="skill-item">Project Management</div>
-            <div class="skill-item">MS Office</div>
-            <div class="skill-item">C++, Python, CST Studio Suite, VHDL</div>
-            <div class="skill-item">Embedded Systems</div>
+            <h2>Key Skills 💼</h2>
+            <div class="skill-category">
+                <h3>Personal Skills</h3>
+                <ul class="skill-list">
+                    <li>Communication Skills</li>
+                    <li>Problem Solving</li>
+                    <li>Time Management</li>
+                    <li>Teamwork</li>
+                    <li>Leadership Skills</li>
+                    <li>Presentation</li>
+                    <li>Technical Writing Skills</li>
+                    <li>Responsibility</li>
+                    <li>Project Management</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Computer Skills 💻</h3>
+                <ul class="skill-list">
+                    <li>Excellent user of MS Office (Word, Excel, PowerPoint, Outlook)</li>
+                    <li>Basic knowledge of C++, Python, CST Studio Suite, and VHDL</li>
+                    <li>Embedded Systems</li>
+                </ul>
+            </div>
         </section>
 
         <section class="objective">
-            <h2>Objective</h2>
+            <h2>Objective 🎯</h2>
             <p>Seeking a challenging position in a reputable organization in the field of electronic and communication engineering where I can enhance and leverage my interpersonal skills and academic knowledge to contribute to the organization’s success.</p>
         </section>
 
         <section class="education">
-            <h2>Education</h2>
+            <h2>Education 🎓</h2>
             <p><strong>Bachelor of Engineering in Electronic and Communication Engineering</strong> – Future University in Egypt in collaboration with Missouri University of Science and Technology, USA (2016-2021)</p>
             <p>CGPA: 2.95/4, Good, Ranked fifth in department</p>
             <p>Graduation Project: I-Office for Applying Artificial Intelligence on the Internet of Things (AIOT), Grade: Excellent</p>
         </section>
 
         <section class="experience">
-            <h2>Work Experience</h2>
+            <h2>Work Experience 🛠️</h2>
             <div class="job">
                 <h3>Site Engineer – Central Bus Station</h3>
                 <p><strong>Demo Network Solutions</strong> (Aug 2023 – Present)</p>
@@ -203,7 +246,7 @@
         </section>
 
         <section class="online-courses">
-            <h2>Online Course and Certificate</h2>
+            <h2>Online Course and Certificate 📜</h2>
             <p>Flutter at Variance Online Learning (Jan 2022)</p>
         </section>
 
