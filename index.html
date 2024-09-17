@@ -14,47 +14,61 @@
             background-color: #1b1b1b;
             display: flex;
             height: 100vh;
+         
         }
 
         /* Sidebar Styling */
         .sidebar {
-            background-color: #252525;
-            width: 400px;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            
+            width: 850px;
+            height: 100vh;
+            position: relative;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: center;
-            color: #ccc;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         }
 
         .sidebar img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            
+          
+        }
+
+        .sidebar .profile-text {
+            padding: auto;
+            position: absolute;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .sidebar h1 {
-            color: #fff;
             font-size: 2em;
             margin: 0;
         }
 
         .sidebar p {
-            color: #b0b0b0;
+            color: #00bc8c;
             margin: 8px 0;
         }
 
-        /* Social Icons */
         .social-icons {
             margin-top: 15px;
         }
 
         .social-icons a {
-            color: #00bc8c;
+            color: #ffffff;
             margin: 0 15px;
             text-decoration: none;
             font-size: 1.5em;
@@ -70,78 +84,67 @@
             flex-grow: 1;
             padding: 40px;
             overflow-y: auto;
-        }
-
-        .content h2 {
-            font-size: 1.8em;
-            color: #00bc8c;
-            border-bottom: 2px solid #00bc8c;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .content p, .content ul {
-            line-height: 1.6;
-            color: #ccc;
-        }
-
-        .content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .content ul li::before {
-            content: "•";
-            color: #00bc8c;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+            display: flex;
+            flex-direction: column;
         }
 
         .section {
             margin-bottom: 40px;
         }
 
-        /* Section Styles */
-        .section-card {
-            background-color: #2e2e2e;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+        .section h2 {
+            color: #00bc8c;
+            font-size: 1.8em;
+            border-bottom: 2px solid #00bc8c;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex;
+       
         }
-
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
             margin-bottom: 10px;
         }
 
+        .section-card {
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+          
+            
+        }
         .section-card ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 10px;
+            list-style-type: none;
+            padding: 0;
         }
 
         .section-card ul li {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
-        .section-card p {
-            margin: 5px 0;
+        .section-card a {
+            color: #00bc8c;
+            text-decoration: none;
         }
 
+        .section-card a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <!-- صورة من Google Drive -->
-<img src="https://i.imgur.com/mgSQQQQ.png" alt="Profile Picture">      
-        <h1>Shaher Ismail Mohamed</h1>
-        <p>Electronic and Communication Engineer</p>
-        <div class="social-icons">
-            <a href="mailto:shaherismail9@gmail.com">✉</a>
-            <a href="http://linkedin.com/in/shaherismail" target="_blank">in</a>
+        <img src="https://i.imgur.com/uxR0s80.png" alt="Profile Picture">
+        <div class="profile-text">
+            <h1>Shaher Ismail Mohamed</h1>
+            <p>Electronic and Communication Engineer</p>
+            <div class="social-icons">
+                <a href="mailto:shaherismail9@gmail.com">✉</a>
+                <a href="http://linkedin.com/in/shaherismail" target="_blank">in</a>
+            </div>
         </div>
     </div>
     <div class="content">
@@ -151,8 +154,6 @@
                 <ul>
                     <li>Nasr City, Cairo, Egypt</li>
                     <li>+201097396281</li>
-                    <li>Shaherismail9@gmail.com</li>
-                    <li><a href="http://linkedin.com/in/shaherismail">LinkedIn</a></li>
                     <li>Date of birth: 29 Sep 1998</li>
                 </ul>
             </div>
@@ -204,7 +205,6 @@
 
         <section class="section experience">
             <h2>Work Experience</h2>
-
             <div class="section-card">
                 <h3>Site Engineer – Central Bus Station in the New Administrative Capital</h3>
                 <p><strong>Demo Network Solutions</strong> (Aug 2023 – Present)</p>
@@ -262,7 +262,6 @@
                 </ul>
             </div>
         </section>
-
     </div>
 </body>
 </html>
