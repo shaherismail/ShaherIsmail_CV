@@ -14,12 +14,11 @@
             background-color: #1b1b1b;
             display: flex;
             height: 100vh;
-         
+            overflow: hidden; /* Prevent scrollbars */
         }
 
         /* Sidebar Styling */
         .sidebar {
-            
             width: 850px; 
             height: 100vh;
             position: relative;
@@ -28,6 +27,7 @@
             justify-content: center;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            transition: width 0.3s;
         }
 
         .sidebar img {
@@ -38,8 +38,6 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            
-          
         }
 
         .sidebar .profile-text {
@@ -86,6 +84,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            transition: margin-left 0.3s;
         }
 
         .section {
@@ -99,8 +98,8 @@
             padding-bottom: 5px;
             margin-bottom: 15px;
             display: flex;
-       
         }
+        
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
@@ -113,9 +112,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-          
-            
         }
+
         .section-card ul {
             list-style-type: none;
             padding: 0;
@@ -133,29 +131,58 @@
         .section-card a:hover {
             text-decoration: underline;
         }
+
+        /* Responsive Styles */
         @media (max-width: 1200px) {
             .sidebar {
-                width: 250px; /* Adjust for medium screens */
+                width: 200px;
             }
         }
 
         @media (max-width: 768px) {
             .sidebar {
-                width: 200px; /* Adjust for small screens */
+                width: 180px;
             }
         }
 
         @media (max-width: 480px) {
             .sidebar {
-                width: 3500px;
-              height: 95vh;
+                width: 0; /* Hide sidebar on mobile by default */
+                position: absolute;
+                height: 100vh;
+                overflow: hidden;
+                transition: width 0.3s;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                font-size: 1.5em;
+                cursor: pointer;
+                color: #fff;
+                background-color: #333;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .sidebar.show {
+                width: 250px; /* Show sidebar on mobile when toggled */
+            }
+
+            .content.shift {
+                margin-left: 250px;
             }
         }
-
-    
     </style>
 </head>
 <body>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
     <div class="sidebar">
         <img src="https://i.imgur.com/uxR0s80.png" alt="Profile Picture">
         <div class="profile-text">
@@ -283,5 +310,14 @@
             </div>
         </section>
     </div>
+    
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var content = document.querySelector('.content');
+            sidebar.classList.toggle('show');
+            content.classList.toggle('shift');
+        }
+    </script>
 </body>
 </html>
