@@ -19,16 +19,15 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 0; /* Hide sidebar by default on mobile */
+            width: 850px; 
             height: 100vh;
-            position: fixed;
+            position: relative;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             overflow: hidden;
-            background-color: #333;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
             transition: width 0.3s;
-            z-index: 1000;
         }
 
         .sidebar img {
@@ -42,6 +41,9 @@
         }
 
         .sidebar .profile-text {
+            padding: auto;
+            position: absolute;
+            z-index: 1;
             color: #fff;
             text-align: center;
             padding: 20px;
@@ -72,7 +74,7 @@
         }
 
         .social-icons a:hover {
-            color: #00bc8c;
+            color: #fff;
         }
 
         /* Content Styling */
@@ -133,23 +135,15 @@
         /* Responsive Styles */
         @media (max-width: 480px) {
             .sidebar {
-                width: 250px; /* Show sidebar on mobile when toggled */
+                width: 0; /* Hide sidebar by default on mobile */
                 position: fixed;
-                top: 0;
-                left: 0;
-                height: 100vh;
-                overflow-y: auto;
-                background-color: #333;
-                z-index: 1000;
+                height: 95vh;
+                overflow: hidden;
+                transition: width 0.3s;
             }
 
             .content {
                 margin-left: 0;
-                transition: margin-left 0.3s;
-            }
-
-            .content.shift {
-                margin-left: 250px; /* Space for the sidebar */
             }
 
             .menu-toggle {
@@ -163,34 +157,21 @@
                 background-color: #333;
                 padding: 10px;
                 border-radius: 5px;
-                z-index: 1001;
+                z-index: 1000;
             }
 
-            .mobile-header {
-                display: block;
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-                text-align: center;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1001;
+            .sidebar.show {
+                width: 250px; /* Show sidebar on mobile when toggled */
             }
 
-            .mobile-header .extra-info {
-                display: block;
-                margin-top: 10px;
+            .content.shift {
+                margin-left: 250px;
             }
         }
 
         @media (min-width: 481px) {
             .menu-toggle {
                 display: none; /* Hide menu toggle button on larger screens */
-            }
-
-            .mobile-header {
-                display: none; /* Hide mobile header on larger screens */
             }
         }
     </style>
@@ -209,14 +190,6 @@
         </div>
     </div>
     <div class="content">
-        <div class="mobile-header">
-            <h1>Shaher Ismail Mohamed</h1>
-            <p>Electronic and Communication Engineer</p>
-            <div class="extra-info">
-                <a href="mailto:shaherismail9@gmail.com">Email</a> |
-                <a href="http://linkedin.com/in/shaherismail" target="_blank">LinkedIn</a>
-            </div>
-        </div>
         <section class="section personal-info">
             <h2>Personal Information</h2>
             <div class="section-card">
@@ -268,83 +241,59 @@
         <section class="section objective">
             <h2>Objective</h2>
             <div class="section-card">
-                <p>Seeking a challenging position in a reputable organization in the field of Electronics and Communication Engineering where I can utilize my personal skills and academic knowledge to contribute to the organization’s success.</p>
+                <p>Seeking a challenging position in a reputable organization in the field of electronic and communication engineering where I can enhance and leverage my interpersonal skills and academic knowledge to make a positive and significant contribution to the success of the organization in multiple disciplines of the engineering field.</p>
             </div>
         </section>
 
         <section class="section experience">
-            <h2>Professional Experience</h2>
+            <h2>Work Experience</h2>
             <div class="section-card">
-                <h3>Site Engineer - Central Bus Station, New Administrative Capital</h3>
+                <h3>Site Engineer – Central Bus Station in the New Administrative Capital</h3>
                 <p><strong>Demo Network Solutions</strong> (Aug 2023 – Present)</p>
                 <ul>
-                    <li>Managing low-current systems including CCTV and access control.</li>
-                    <li>Ensuring system integration and compliance with project specifications and safety standards.</li>
+                    <li>Responsible for the installation and management of low current systems, including CCTV and access control.</li>
                 </ul>
             </div>
 
             <div class="section-card">
                 <h3>IT Engineer</h3>
-                <p><strong>6th October Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
+                <p><strong>6th of October Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
                 <ul>
-                    <li>Managed IT infrastructure, including hardware and software troubleshooting and maintenance.</li>
+                    <li>Managed IT infrastructure and ensured system reliability.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>Summer Training – Microchip Microcontrollers</h3>
+                <p><strong>JELECOM Company</strong> (Jun 2019 – Jul 2019)</p>
+                <ul>
+                    <li>Basic and advanced applications of Microchip microcontrollers.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>Internal Summer Training</h3>
+                <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
+                <ul>
+                    <li>Engaged in basic training related to communication and electronics engineering.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="section education">
-            <h2>Education</h2>
+        <section class="section online-courses">
+            <h2>Online Course and Certificate</h2>
             <div class="section-card">
-                <h3>Bachelor’s Degree in Electronics and Communications Engineering</h3>
-                <p><strong>Future University in Egypt in collaboration with Missouri University of Science and Technology</strong> (2016 – 2021)</p>
-                <ul>
-                    <li>GPA: 2.95/4, Good, 5th in the class.</li>
-                    <li>Graduation Project: I-Office for AI in IoT - Grade: Excellent.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section training">
-            <h2>Training</h2>
-            <div class="section-card">
-                <h3>Summer Internship at Future University in Egypt</h3>
-                <p>Sep 2018</p>
-            </div>
-
-            <div class="section-card">
-                <h3>Microcontroller Applications Training - JELECOM</h3>
-                <p>Jun 2019 – Jul 2019</p>
-            </div>
-
-            <div class="section-card">
-                <h3>Advanced Microcontroller Applications Training - JELECOM</h3>
-                <p>Jul 2019</p>
-            </div>
-
-            <div class="section-card">
-                <h3>Satellite Technology Level 1 & 2</h3>
-                <p><strong>University of Benha - Obour Branch in collaboration with the Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
-            </div>
-        </section>
-
-        <section class="section certifications">
-            <h2>Certifications</h2>
-            <div class="section-card">
-                <h3>Flutter - Variance Online Learning</h3>
-                <p>Jan 2022</p>
+                <p>Flutter at Variance Online Learning (Jan 2022)</p>
             </div>
         </section>
 
         <section class="section extracurricular">
             <h2>Extracurricular Activities</h2>
             <div class="section-card">
-                <h3>SPE Branch Member - Future University</h3>
-                <p>Oct 2018 – Oct 2021</p>
-            </div>
-
-            <div class="section-card">
-                <h3>Student Developer Clubs (DSC) Member - Future University</h3>
-                <p>Dec 2019 – Jul 2021</p>
+                <ul>
+                    <li>Member of SPE branch at FUE (Oct 2018 – Oct 2021)</li>
+                    <li>Member of Developer Student Clubs (DSC) – FUE (Dec 2019 – Jul 2021)</li>
+                </ul>
             </div>
         </section>
     </div>
