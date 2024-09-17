@@ -19,15 +19,16 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 850px; 
+            width: 0; /* Hide sidebar by default on mobile */
             height: 100vh;
-            position: relative;
+            position: fixed;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            background-color: #333;
             transition: width 0.3s;
+            z-index: 1000;
         }
 
         .sidebar img {
@@ -41,9 +42,6 @@
         }
 
         .sidebar .profile-text {
-            padding: auto;
-            position: absolute;
-            z-index: 1;
             color: #fff;
             text-align: center;
             padding: 20px;
@@ -74,7 +72,7 @@
         }
 
         .social-icons a:hover {
-            color: #fff;
+            color: #00bc8c;
         }
 
         /* Content Styling */
@@ -135,15 +133,23 @@
         /* Responsive Styles */
         @media (max-width: 480px) {
             .sidebar {
-                width: 0; /* Hide sidebar by default on mobile */
+                width: 250px; /* Show sidebar on mobile when toggled */
                 position: fixed;
+                top: 0;
+                left: 0;
                 height: 100vh;
-                overflow: hidden;
-                transition: width 0.3s;
+                overflow-y: auto;
+                background-color: #333;
+                z-index: 1000;
             }
 
             .content {
                 margin-left: 0;
+                transition: margin-left 0.3s;
+            }
+
+            .content.shift {
+                margin-left: 250px; /* Space for the sidebar */
             }
 
             .menu-toggle {
@@ -157,18 +163,9 @@
                 background-color: #333;
                 padding: 10px;
                 border-radius: 5px;
-                z-index: 1000;
+                z-index: 1001;
             }
 
-            .sidebar.show {
-                width: 250px; /* Show sidebar on mobile when toggled */
-            }
-
-            .content.shift {
-                margin-left: 250px;
-            }
-
-            /* Mobile Header */
             .mobile-header {
                 display: block;
                 background-color: #333;
@@ -178,11 +175,12 @@
                 position: fixed;
                 top: 0;
                 width: 100%;
-                z-index: 1000;
+                z-index: 1001;
             }
 
             .mobile-header .extra-info {
                 display: block;
+                margin-top: 10px;
             }
         }
 
@@ -270,17 +268,18 @@
         <section class="section objective">
             <h2>Objective</h2>
             <div class="section-card">
-                <p>Seeking a challenging position in a reputable organization in the field of electronic and communication engineering where I can enhance and leverage my interpersonal skills and academic knowledge to make a positive and significant contribution to the success of the organization in multiple disciplines of the engineering field.</p>
+                <p>Seeking a challenging position in a reputable organization in the field of Electronics and Communication Engineering where I can utilize my personal skills and academic knowledge to contribute to the organization’s success.</p>
             </div>
         </section>
 
         <section class="section experience">
-            <h2>Work Experience</h2>
+            <h2>Professional Experience</h2>
             <div class="section-card">
-                <h3>Site Engineer – Central Bus Station in the New Administrative Capital</h3>
+                <h3>Site Engineer - Central Bus Station, New Administrative Capital</h3>
                 <p><strong>Demo Network Solutions</strong> (Aug 2023 – Present)</p>
                 <ul>
-                    <li>Responsible for the installation and management of low current systems, including CCTV and access control.</li>
+                    <li>Managing low-current systems including CCTV and access control.</li>
+                    <li>Ensuring system integration and compliance with project specifications and safety standards.</li>
                 </ul>
             </div>
 
