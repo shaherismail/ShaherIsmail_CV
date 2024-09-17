@@ -14,12 +14,11 @@
             background-color: #1b1b1b;
             display: flex;
             height: 100vh;
-         
+            overflow: hidden;
         }
 
         /* Sidebar Styling */
         .sidebar {
-            
             width: 850px;
             height: 100vh;
             position: relative;
@@ -38,12 +37,9 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            
-          
         }
 
         .sidebar .profile-text {
-            padding: auto;
             position: absolute;
             z-index: 1;
             color: #fff;
@@ -86,6 +82,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            margin-left: 850px; /* Adjusted margin to match sidebar width */
         }
 
         .section {
@@ -99,8 +96,8 @@
             padding-bottom: 5px;
             margin-bottom: 15px;
             display: flex;
-       
         }
+
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
@@ -113,9 +110,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-          
-            
         }
+
         .section-card ul {
             list-style-type: none;
             padding: 0;
@@ -132,6 +128,87 @@
 
         .section-card a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 600px;
+            }
+
+            .content {
+                margin-left: 600px; /* Adjusted for new sidebar width */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                box-shadow: none; /* Remove shadow on small screens */
+            }
+
+            .sidebar img {
+                height: 300px; /* Adjust height of the image */
+                object-fit: cover;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .sidebar .profile-text {
+                position: relative;
+                padding: 10px;
+            }
+
+            .sidebar h1 {
+                font-size: 1.5em;
+            }
+
+            .sidebar p {
+                font-size: 1em;
+            }
+
+            .social-icons a {
+                font-size: 1.2em;
+                margin: 0 10px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .section-card h3 {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar img {
+                height: 200px; /* Further adjust height for very small screens */
+            }
+
+            .sidebar h1 {
+                font-size: 1.2em;
+            }
+
+            .sidebar p {
+                font-size: 0.9em;
+            }
+
+            .social-icons a {
+                font-size: 1em;
+            }
+
+            .section h2 {
+                font-size: 1.2em;
+            }
+
+            .section-card h3 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
