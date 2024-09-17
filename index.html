@@ -137,7 +137,7 @@
             .sidebar {
                 width: 0; /* Hide sidebar by default on mobile */
                 position: fixed;
-                height: 95vh;
+                height: 100vh;
                 overflow: hidden;
                 transition: width 0.3s;
             }
@@ -168,26 +168,21 @@
                 margin-left: 250px;
             }
 
-            /* Add text at the top of the page on mobile */
+            /* Mobile Header */
             .mobile-header {
                 display: block;
-                text-align: center;
+                background-color: #333;
                 color: #fff;
                 padding: 10px;
-                background-color: #333;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
             }
 
-            /* Show additional information in Personal Information section on mobile */
-            .personal-info .extra-info {
+            .mobile-header .extra-info {
                 display: block;
-            }
-
-            .sidebar .profile-text {
-                display: none; /* Hide profile text in sidebar on mobile */
-            }
-
-            .sidebar img {
-                height: 150px; /* Adjust the height for better fit on mobile */
             }
         }
 
@@ -199,21 +194,11 @@
             .mobile-header {
                 display: none; /* Hide mobile header on larger screens */
             }
-
-            .personal-info .extra-info {
-                display: none; /* Hide extra info on larger screens */
-            }
         }
     </style>
 </head>
 <body>
     <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
-    
-    <div class="mobile-header">
-        <h1>Shaher Ismail Mohamed</h1>
-        <p>Electronic and Communication Engineer</p>
-    </div>
-
     <div class="sidebar">
         <img src="https://i.imgur.com/uxR0s80.png" alt="Profile Picture">
         <div class="profile-text">
@@ -221,13 +206,19 @@
             <p>Electronic and Communication Engineer</p>
             <div class="social-icons">
                 <a href="mailto:shaherismail9@gmail.com">✉</a>
-                <a href="mailto:ShaherIsmail9@gmail.com">📧</a>
-                <a href="http://linkedin.com/in/shaherismail" target="_blank">🔗</a>
+                <a href="http://linkedin.com/in/shaherismail" target="_blank">in</a>
             </div>
         </div>
     </div>
-
     <div class="content">
+        <div class="mobile-header">
+            <h1>Shaher Ismail Mohamed</h1>
+            <p>Electronic and Communication Engineer</p>
+            <div class="extra-info">
+                <a href="mailto:shaherismail9@gmail.com">Email</a> |
+                <a href="http://linkedin.com/in/shaherismail" target="_blank">LinkedIn</a>
+            </div>
+        </div>
         <section class="section personal-info">
             <h2>Personal Information</h2>
             <div class="section-card">
@@ -235,11 +226,6 @@
                     <li>Nasr City, Cairo, Egypt</li>
                     <li>+201097396281</li>
                     <li>Date of birth: 29 Sep 1998</li>
-                    <li class="extra-info">
-                        <a href="mailto:shaherismail9@gmail.com">Email</a> |
-                        <a href="mailto:ShaherIsmail9@gmail.com">Google Email</a> |
-                        <a href="http://linkedin.com/in/shaherismail" target="_blank">LinkedIn</a>
-                    </li>
                 </ul>
             </div>
         </section>
@@ -300,9 +286,9 @@
 
             <div class="section-card">
                 <h3>IT Engineer</h3>
-                <p><strong>October 6 Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
+                <p><strong>6th October Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
                 <ul>
-                    <li>Worked on IT systems and support within the hospital environment.</li>
+                    <li>Managed IT infrastructure, including hardware and software troubleshooting and maintenance.</li>
                 </ul>
             </div>
         </section>
@@ -310,21 +296,11 @@
         <section class="section education">
             <h2>Education</h2>
             <div class="section-card">
-                <h3>Bachelor's Degree in Electronics and Communication Engineering</h3>
-                <p><strong>Future University in Egypt in cooperation with Missouri University of Science and Technology</strong> (2016 – 2021)</p>
+                <h3>Bachelor’s Degree in Electronics and Communications Engineering</h3>
+                <p><strong>Future University in Egypt in collaboration with Missouri University of Science and Technology</strong> (2016 – 2021)</p>
                 <ul>
-                    <li>GPA: 2.95/4, Good, Fifth in the Department</li>
-                    <li>Graduation Project: I-Office AIOT Application, Grade: Excellent</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section certifications">
-            <h2>Certifications</h2>
-            <div class="section-card">
-                <ul>
-                    <li>Flutter – Variance Online Learning (Jan 2022)</li>
-                    <li>Satellite Technology Level 1 and 2 – Benha University - Obour Branch in cooperation with the Egyptian Space Agency (Aug 2020 – Sep 2020)</li>
+                    <li>GPA: 2.95/4, Good, 5th in the class.</li>
+                    <li>Graduation Project: I-Office for AI in IoT - Grade: Excellent.</li>
                 </ul>
             </div>
         </section>
@@ -332,28 +308,44 @@
         <section class="section training">
             <h2>Training</h2>
             <div class="section-card">
-                <h3>Microcontroller Applications – JELECOM</h3>
+                <h3>Summer Internship at Future University in Egypt</h3>
+                <p>Sep 2018</p>
+            </div>
+
+            <div class="section-card">
+                <h3>Microcontroller Applications Training - JELECOM</h3>
                 <p>Jun 2019 – Jul 2019</p>
             </div>
 
             <div class="section-card">
-                <h3>Advanced Microcontroller Applications – JELECOM</h3>
+                <h3>Advanced Microcontroller Applications Training - JELECOM</h3>
                 <p>Jul 2019</p>
             </div>
 
             <div class="section-card">
-                <h3>Summer Training – Future University</h3>
-                <p>Sep 2018</p>
+                <h3>Satellite Technology Level 1 & 2</h3>
+                <p><strong>University of Benha - Obour Branch in collaboration with the Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
             </div>
         </section>
 
-        <section class="section activities">
+        <section class="section certifications">
+            <h2>Certifications</h2>
+            <div class="section-card">
+                <h3>Flutter - Variance Online Learning</h3>
+                <p>Jan 2022</p>
+            </div>
+        </section>
+
+        <section class="section extracurricular">
             <h2>Extracurricular Activities</h2>
             <div class="section-card">
-                <ul>
-                    <li>Member of SPE Branch at Future University (Oct 2018 – Oct 2021)</li>
-                    <li>Member of Developer Student Clubs (DSC) - Future University (Dec 2019 – Jul 2021)</li>
-                </ul>
+                <h3>SPE Branch Member - Future University</h3>
+                <p>Oct 2018 – Oct 2021</p>
+            </div>
+
+            <div class="section-card">
+                <h3>Student Developer Clubs (DSC) Member - Future University</h3>
+                <p>Dec 2019 – Jul 2021</p>
             </div>
         </section>
     </div>
