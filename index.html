@@ -19,7 +19,7 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 850px; 
+            width: 250px; 
             height: 100vh;
             position: relative;
             display: flex;
@@ -97,9 +97,8 @@
             border-bottom: 2px solid #00bc8c;
             padding-bottom: 5px;
             margin-bottom: 15px;
-            display: flex;
         }
-        
+
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
@@ -137,7 +136,7 @@
             .sidebar {
                 width: 0; /* Hide sidebar by default on mobile */
                 position: fixed;
-                height: 95vh;
+                height: 100vh;
                 overflow: hidden;
                 transition: width 0.3s;
             }
@@ -170,25 +169,10 @@
 
             .personal-info-mobile {
                 display: block;
-                margin-top: 20px;
-                color: #ddd;
             }
 
-            .personal-info-mobile ul {
-                list-style-type: none;
-                padding: 0;
-                font-size: 0.9em;
-            }
-
-            .personal-info-mobile a {
-                display: block;
-                color: #00bc8c;
-                text-decoration: none;
-                margin-bottom: 5px;
-            }
-
-            .personal-info-mobile a:hover {
-                text-decoration: underline;
+            .personal-info {
+                display: none;
             }
         }
 
@@ -198,7 +182,7 @@
             }
 
             .personal-info-mobile {
-                display: none; /* Hide personal info section on larger screens */
+                display: none; /* Hide personal info on larger screens */
             }
         }
     </style>
@@ -217,6 +201,7 @@
         </div>
     </div>
     <div class="content">
+        <!-- Personal Information Section -->
         <section class="section personal-info">
             <h2>Personal Information</h2>
             <div class="section-card">
@@ -228,6 +213,7 @@
             </div>
         </section>
 
+        <!-- Languages Section -->
         <section class="section languages">
             <h2>Languages</h2>
             <div class="section-card">
@@ -238,6 +224,7 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section class="section skills">
             <h2>Key Skills</h2>
             <div class="section-card">
@@ -265,6 +252,7 @@
             </div>
         </section>
 
+        <!-- Objective Section -->
         <section class="section objective">
             <h2>Objective</h2>
             <div class="section-card">
@@ -272,6 +260,7 @@
             </div>
         </section>
 
+        <!-- Work Experience Section -->
         <section class="section experience">
             <h2>Work Experience</h2>
             <div class="section-card">
@@ -307,41 +296,37 @@
             </div>
         </section>
 
-        <section class="section online-courses">
-            <h2>Online Course and Certificate</h2>
+        <!-- Education Section -->
+        <section class="section education">
+            <h2>Education</h2>
             <div class="section-card">
-                <p>Flutter at Variance Online Learning (Jan 2022)</p>
-            </div>
-        </section>
-
-        <section class="section extracurricular">
-            <h2>Extracurricular Activities</h2>
-            <div class="section-card">
+                <h3>Bachelor's Degree in Electronics and Communication Engineering</h3>
+                <p><strong>Future University in Egypt</strong> (2016 – 2021)</p>
                 <ul>
-                    <li>Member of SPE branch at FUE (Oct 2018 – Oct 2021)</li>
-                    <li>Member of Developer Student Clubs (DSC) – FUE (Dec 2019 – Jul 2021)</li>
+                    <li>GPA: 2.95/4 – Good, ranked 5th in the department.</li>
+                    <li>Graduation Project: I-Office – AI-based IoT application.</li>
                 </ul>
             </div>
         </section>
     </div>
 
-    <div class="personal-info-mobile">
-        <h2>Personal Information</h2>
+    <!-- Mobile Personal Information Section -->
+    <section class="section personal-info-mobile">
+        <h2>Shaher Ismail Mohamed</h2>
+        <p>Electronic and Communication Engineer</p>
         <div class="section-card">
             <ul>
-                <li>Nasr City, Cairo, Egypt</li>
-                <li>+201097396281</li>
-                <li>Date of birth: 29 Sep 1998</li>
-                <li><a href="mailto:shaherismail9@gmail.com">Email: shaherismail9@gmail.com</a></li>
-                <li><a href="http://linkedin.com/in/shaherismail" target="_blank">LinkedIn: Shaher Ismail Mohamed</a></li>
+                <li>Email: <a href="mailto:shaherismail9@gmail.com">shaherismail9@gmail.com</a></li>
+                <li>Google Email: <a href="mailto:ShaherIsmail9@gmail.com">ShaherIsmail9@gmail.com</a></li>
+                <li>LinkedIn: <a href="http://linkedin.com/in/shaherismail" target="_blank">linkedin.com/in/shaherismail</a></li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <script>
         function toggleSidebar() {
-            var sidebar = document.querySelector('.sidebar');
-            var content = document.querySelector('.content');
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
             sidebar.classList.toggle('show');
             content.classList.toggle('shift');
         }
