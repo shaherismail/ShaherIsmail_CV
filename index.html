@@ -19,7 +19,7 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 850px; 
+            width: 250px; 
             height: 100vh;
             position: relative;
             display: flex;
@@ -133,22 +133,10 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .sidebar {
-                width: 200px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 180px;
-            }
-        }
-
         @media (max-width: 480px) {
             .sidebar {
-                width: 0; /* Hide sidebar on mobile by default */
-                position: absolute;
+                width: 0; /* Hide sidebar by default on mobile */
+                position: fixed;
                 height: 100vh;
                 overflow: hidden;
                 transition: width 0.3s;
@@ -160,7 +148,7 @@
 
             .menu-toggle {
                 display: block;
-                position: absolute;
+                position: fixed;
                 top: 10px;
                 left: 10px;
                 font-size: 1.5em;
@@ -169,6 +157,7 @@
                 background-color: #333;
                 padding: 10px;
                 border-radius: 5px;
+                z-index: 1000;
             }
 
             .sidebar.show {
@@ -177,6 +166,12 @@
 
             .content.shift {
                 margin-left: 250px;
+            }
+        }
+
+        @media (min-width: 481px) {
+            .menu-toggle {
+                display: none; /* Hide menu toggle button on larger screens */
             }
         }
     </style>
@@ -277,14 +272,6 @@
             </div>
 
             <div class="section-card">
-                <h3>Satellite Technology Course Level 1&2</h3>
-                <p><strong>Benha University Obour Campus in cooperation with Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
-                <ul>
-                    <li>Participated in satellite technology training programs.</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
                 <h3>Internal Summer Training</h3>
                 <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
                 <ul>
@@ -310,7 +297,7 @@
             </div>
         </section>
     </div>
-    
+
     <script>
         function toggleSidebar() {
             var sidebar = document.querySelector('.sidebar');
