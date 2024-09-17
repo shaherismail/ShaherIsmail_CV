@@ -20,7 +20,7 @@
         /* Sidebar Styling */
         .sidebar {
             
-            width: 850px;
+            width: 850px; 
             height: 100vh;
             position: relative;
             display: flex;
@@ -132,6 +132,25 @@
 
         .section-card a:hover {
             text-decoration: underline;
+        }
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 250px; /* Adjust for medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px; /* Adjust for small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%; /* Full width for very small screens */
+                height: auto; /* Adjust height for better fit */
+                position: static; /* Make it static for very small screens */
+            }
         }
     </style>
 </head>
