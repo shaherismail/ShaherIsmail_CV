@@ -8,219 +8,171 @@
         /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
-            color: #333;
+            color: #ddd;
             margin: 0;
             padding: 0;
-            background-color: #f2f7fc; /* Very Light Blue */
+            background-color: #1b1b1b;
+            display: flex;
+            height: 100vh;
         }
 
-        header {
-            background-color: #007bff; /* Light Blue */
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid #0056b3; /* Darker Blue */
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 5px;
-        }
-
-        /* Container Styles */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* Main Content Styles */
-        main {
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #252525;
+            width: 400px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            color: #ccc;
         }
 
-        section {
-            margin-bottom: 30px;
+        .sidebar img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
         }
 
-        h2 {
+        .sidebar h1 {
+            color: #fff;
             font-size: 2em;
-            color: #007bff; /* Light Blue */
-            border-bottom: 2px solid #007bff; /* Light Blue */
+            margin: 0;
+        }
+
+        .sidebar p {
+            color: #b0b0b0;
+            margin: 8px 0;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: #00bc8c;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.5em;
+            vertical-align: middle;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+        }
+
+        /* Content Styling */
+        .content {
+            flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .content h2 {
+            font-size: 1.8em;
+            color: #00bc8c;
+            border-bottom: 2px solid #00bc8c;
             padding-bottom: 10px;
             margin-bottom: 20px;
-            font-weight: bold;
         }
 
-        /* Contact Section */
-        .contact p {
-            margin: 10px 0;
+        .content p, .content ul {
+            line-height: 1.6;
+            color: #ccc;
         }
 
-        .contact a {
-            color: #007bff; /* Light Blue */
-            text-decoration: none;
+        .content ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+        .content ul li::before {
+            content: "•";
+            color: #00bc8c;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
 
-        /* Skills Section */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        .section {
+            margin-bottom: 40px;
         }
 
-        .skill-category {
-            width: 100%;
+        /* Section Styles */
+        .section-card {
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
-        .skill-category h3 {
-            font-size: 1.5em;
-            color: #007bff; /* Light Blue */
+        .section-card h3 {
+            color: #00bc8c;
+            font-size: 1.6em;
             margin-bottom: 10px;
-            font-weight: bold;
         }
 
-        .skill-list {
+        .section-card ul {
             list-style-type: disc;
-            margin: 0;
-            padding: 0 20px;
+            padding-left: 20px;
+            margin-top: 10px;
         }
 
-        .skill-list li {
+        .section-card ul li {
             margin-bottom: 5px;
         }
 
-        /* Experience Section */
-        .job {
-            background-color: #e9f5ff; /* Very Light Blue Background */
-            border: 1px solid #cce5ff; /* Light Blue Border */
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .job h3 {
-            margin: 0;
-            color: #0056b3; /* Darker Blue */
-            font-size: 1.4em;
-            font-weight: bold;
-        }
-
-        .job p {
+        .section-card p {
             margin: 5px 0;
         }
 
-        .job ul {
-            list-style-type: disc;
-            margin: 10px 0 0 20px;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #007bff; /* Light Blue */
-            color: #fff;
-            text-align: center;
-            padding: 15px 20px;
-            border-top: 5px solid #0056b3; /* Darker Blue */
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .skills {
-                flex-direction: column;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            .container {
-                width: 95%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            header p {
-                font-size: 0.9em;
-            }
-
-            h2 {
-                font-size: 1.2em;
-            }
-
-            .job {
-                padding: 10px;
-            }
-
-            .skill-list {
-                padding-left: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Shaher Ismail Mohamed</h1>
-            <p>Electronic and Communication Engineer</p>
+    <div class="sidebar">
+        <!-- صورة من Google Drive -->
+        <img src="https://drive.google.com/uc?export=view&id=1A3h9vSiC32x8fk_Q5jVFZJog_HOvbzLd" alt="Profile Picture">
+        <h1>Shaher Ismail Mohamed</h1>
+        <p>Electronic and Communication Engineer</p>
+        <div class="social-icons">
+            <a href="mailto:shaherismail9@gmail.com">✉</a>
+            <a href="http://linkedin.com/in/shaherismail" target="_blank">in</a>
         </div>
-    </header>
-
-    <main>
-        <section class="contact">
-            <h2>Personal Information 📍</h2>
-            <p>Address: Nasr City, Cairo, Egypt</p>
-            <p>Phone: <a href="tel:+201097396281">+201097396281</a></p>
-            <p>Email: <a href="mailto:shaherismail9@gmail.com">shaherismail9@gmail.com</a></p>
-            <p>LinkedIn: <a href="http://linkedin.com/in/shaherismail" target="_blank">linkedin.com/in/shaherismail</a></p>
-            <p>Date of Birth: 29 Sep 1998</p>
+    </div>
+    <div class="content">
+        <section class="section personal-info">
+            <h2>Personal Information</h2>
+            <div class="section-card">
+                <ul>
+                    <li>Nasr City, Cairo, Egypt</li>
+                    <li>+201097396281</li>
+                    <li>Shaherismail9@gmail.com</li>
+                    <li><a href="http://linkedin.com/in/shaherismail">LinkedIn</a></li>
+                    <li>Date of birth: 29 Sep 1998</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="languages">
-            <h2>Languages 🌐</h2>
-            <p>Arabic: Mother Tongue</p>
-            <p>English: Excellent</p>
+        <section class="section languages">
+            <h2>Languages</h2>
+            <div class="section-card">
+                <ul>
+                    <li>Arabic: Mother Tongue</li>
+                    <li>English: Excellent</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="skills">
-            <h2>Key Skills 💼</h2>
-            <div class="skill-category">
+        <section class="section skills">
+            <h2>Key Skills</h2>
+            <div class="section-card">
                 <h3>Personal Skills</h3>
-                <ul class="skill-list">
+                <ul>
                     <li>Communication Skills</li>
                     <li>Problem Solving</li>
                     <li>Time Management</li>
@@ -232,72 +184,85 @@
                     <li>Project Management</li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Computer Skills 💻</h3>
-                <ul class="skill-list">
-                    <li>Excellent user of MS Office (Word, Excel, PowerPoint, Outlook)</li>
-                    <li>Basic knowledge of C++, Python, CST Studio Suite, and VHDL</li>
-                    <li>Embedded Systems</li>
+
+            <div class="section-card">
+                <h3>Computer Skills</h3>
+                <ul>
+                    <li>Excellent user of MS Office (Word, Excel, Power Point and Outlook)</li>
+                    <li>Basic knowledge of C++, Python, CST Studio Suite and VHDL software</li>
+                    <li>Embedded System</li>
                 </ul>
             </div>
         </section>
 
-        <section class="objective">
-            <h2>Objective 🎯</h2>
-            <p>Seeking a challenging position in a reputable organization in the field of electronic and communication engineering where I can enhance and leverage my interpersonal skills and academic knowledge to contribute to the organization’s success.</p>
+        <section class="section objective">
+            <h2>Objective</h2>
+            <div class="section-card">
+                <p>Seeking a challenging position in a reputable organization in the field of electronic and communication engineering where I can enhance and leverage my interpersonal skills and academic knowledge to make a positive and significant contribution to the success of the organization in multiple disciplines of the engineering field.</p>
+            </div>
         </section>
 
-        <section class="education">
-            <h2>Education 🎓</h2>
-            <p><strong>Bachelor of Engineering in Electronic and Communication Engineering</strong> – Future University in Egypt in collaboration with Missouri University of Science and Technology, USA (2016-2021)</p>
-            <p>CGPA: 2.95/4, Good, Ranked fifth in department</p>
-            <p>Graduation Project: I-Office for Applying Artificial Intelligence on the Internet of Things (AIOT), Grade: Excellent</p>
-        </section>
+        <section class="section experience">
+            <h2>Work Experience</h2>
 
-        <section class="experience">
-            <h2>Work Experience 🛠️</h2>
-            <div class="job">
-                <h3>Site Engineer – Central Bus Station in the new Administrative Capital</h3>
+            <div class="section-card">
+                <h3>Site Engineer – Central Bus Station in the New Administrative Capital</h3>
                 <p><strong>Demo Network Solutions</strong> (Aug 2023 – Present)</p>
                 <ul>
                     <li>Responsible for the installation and management of low current systems, including CCTV and access control.</li>
                 </ul>
             </div>
-            <div class="job">
+
+            <div class="section-card">
                 <h3>IT Engineer</h3>
                 <p><strong>6th of October Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
+                <ul>
+                    <li>Managed IT infrastructure and ensured system reliability.</li>
+                </ul>
             </div>
-            <div class="job">
-                <h3>Summer Training</h3>
+
+            <div class="section-card">
+                <h3>Summer Training – Microchip Microcontrollers</h3>
                 <p><strong>JELECOM Company</strong> (Jun 2019 – Jul 2019)</p>
-                <p>Microchip Microcontrollers Basic and Advanced Applications</p>
+                <ul>
+                    <li>Basic and advanced applications of Microchip microcontrollers.</li>
+                </ul>
             </div>
-            <div class="job">
+
+            <div class="section-card">
                 <h3>Satellite Technology Course Level 1&2</h3>
                 <p><strong>Benha University Obour Campus in cooperation with Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
+                <ul>
+                    <li>Participated in satellite technology training programs.</li>
+                </ul>
             </div>
-            <div class="job">
-                <h3>Internal Summer Training Course</h3>
+
+            <div class="section-card">
+                <h3>Internal Summer Training</h3>
                 <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
+                <ul>
+                    <li>Engaged in basic training related to communication and electronics engineering.</li>
+                </ul>
             </div>
         </section>
 
-        <section class="online-courses">
-            <h2>Online Course and Certificate 📜</h2>
-            <p>Flutter at Variance Online Learning (Jan 2022)</p>
+        <section class="section online-courses">
+            <h2>Online Course and Certificate</h2>
+            <div class="section-card">
+                <p>Flutter at Variance Online Learning (Jan 2022)</p>
+            </div>
         </section>
-<section class="extracurricular">
-            <h2>Extracurricular Activities</h2>
-            <p>Member at SPE FUE Student Chapter (Oct 2018 – Oct 2021)</p>
-            <p>Member at Developer Student Clubs (DSC) - FUE (Dec 2019 – Jul 2021)</p>
-        </section>
-        
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2024 Shaher Ismail Mohamed. All rights reserved.</p>
-        </div>
-    </footer>
+        <section class="section extracurricular">
+            <h2>Extracurricular Activities</h2>
+            <div class="section-card">
+                <ul>
+                    <li>Member of SPE branch at FUE (Oct 2018 – Oct 2021)</li>
+                    <li>Member of Developer Student Clubs (DSC) – FUE (Dec 2019 – Jul 2021)</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
 </body>
 </html>
