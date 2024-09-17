@@ -19,19 +19,15 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 0;
+            width: 850px; 
             height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
+            position: relative;
             display: flex;
-            align-items: flex-start;
+            align-items: flex-end;
             justify-content: center;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-            background-color: #333; /* Added background color for visibility */
-            transition: width 0.3s ease; /* Smooth transition */
-            z-index: 999; /* Ensure it stays on top */
+            transition: width 0.3s;
         }
 
         .sidebar img {
@@ -45,12 +41,14 @@
         }
 
         .sidebar .profile-text {
-            padding: 20px;
+            padding: auto;
+            position: absolute;
+            z-index: 1;
             color: #fff;
             text-align: center;
+            padding: 20px;
             width: 100%;
             box-sizing: border-box;
-            z-index: 1;
         }
 
         .sidebar h1 {
@@ -86,7 +84,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            transition: margin-left 0.3s ease; /* Smooth transition */
+            transition: margin-left 0.3s;
         }
 
         .section {
@@ -135,18 +133,34 @@
         }
 
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 180px;
+            }
+        }
+
         @media (max-width: 480px) {
             .sidebar {
-                width: 0; /* Hide sidebar by default on mobile */
+                width: 0; /* Hide sidebar on mobile by default */
+                position: absolute;
+                height: 100vh;
+                overflow: hidden;
+                transition: width 0.3s;
             }
 
             .content {
-                margin-left: 0; /* Default margin */
+                margin-left: 0;
             }
 
             .menu-toggle {
                 display: block;
-                position: fixed;
+                position: absolute;
                 top: 10px;
                 left: 10px;
                 font-size: 1.5em;
@@ -155,7 +169,6 @@
                 background-color: #333;
                 padding: 10px;
                 border-radius: 5px;
-                z-index: 1000;
             }
 
             .sidebar.show {
@@ -163,13 +176,7 @@
             }
 
             .content.shift {
-                margin-left: 250px; /* Push content right */
-            }
-        }
-
-        @media (min-width: 481px) {
-            .menu-toggle {
-                display: none; /* Hide menu toggle button on larger screens */
+                margin-left: 250px;
             }
         }
     </style>
@@ -270,6 +277,14 @@
             </div>
 
             <div class="section-card">
+                <h3>Satellite Technology Course Level 1&2</h3>
+                <p><strong>Benha University Obour Campus in cooperation with Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
+                <ul>
+                    <li>Participated in satellite technology training programs.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
                 <h3>Internal Summer Training</h3>
                 <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
                 <ul>
@@ -285,29 +300,17 @@
             </div>
         </section>
 
-        <section class="section education">
-            <h2>Education</h2>
-            <div class="section-card">
-                <h3>Bachelor of Electronics and Communications Engineering</h3>
-                <p><strong>Future University in Egypt in collaboration with Missouri University of Science and Technology</strong> (2016 – 2021)</p>
-                <ul>
-                    <li>GPA: 2.95/4, Good, 5th in the department</li>
-                    <li>Graduation Project: I-Office for AI Application in IoT, Grade: Excellent</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section extracurricular-activities">
+        <section class="section extracurricular">
             <h2>Extracurricular Activities</h2>
             <div class="section-card">
                 <ul>
-                    <li>Member of SPE Chapter at Future University in Egypt (Oct 2018 – Oct 2021)</li>
-                    <li>Member of Student Developers Clubs (DSC) - Future University in Egypt (Dec 2019 – Jul 2021)</li>
+                    <li>Member of SPE branch at FUE (Oct 2018 – Oct 2021)</li>
+                    <li>Member of Developer Student Clubs (DSC) – FUE (Dec 2019 – Jul 2021)</li>
                 </ul>
             </div>
         </section>
     </div>
-
+    
     <script>
         function toggleSidebar() {
             var sidebar = document.querySelector('.sidebar');
