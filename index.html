@@ -13,13 +13,12 @@
             padding: 0;
             background-color: #1b1b1b;
             display: flex;
+            flex-direction: row; /* Change to row by default */
             height: 100vh;
-         
         }
 
         /* Sidebar Styling */
         .sidebar {
-            
             width: 850px;
             height: 100vh;
             position: relative;
@@ -38,12 +37,9 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            
-          
         }
 
         .sidebar .profile-text {
-            padding: auto;
             position: absolute;
             z-index: 1;
             color: #fff;
@@ -72,7 +68,6 @@
             margin: 0 15px;
             text-decoration: none;
             font-size: 1.5em;
-            vertical-align: middle;
         }
 
         .social-icons a:hover {
@@ -98,9 +93,8 @@
             border-bottom: 2px solid #00bc8c;
             padding-bottom: 5px;
             margin-bottom: 15px;
-            display: flex;
-       
         }
+
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
@@ -113,9 +107,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-          
-            
         }
+
         .section-card ul {
             list-style-type: none;
             padding: 0;
@@ -133,15 +126,40 @@
         .section-card a:hover {
             text-decoration: underline;
         }
-         @media (max-width: 480px) {
-            .sidebar {
-                display: none;}
-             .personal-info {
-                display: none;}
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column; /* Stack sidebar on top */
             }
-         @media (min-width: 481px) {
-            .profile-text-mobile {
-                display: none; /* Hide menu toggle button on larger screens */
+
+            .sidebar {
+                width: 100%;
+                height: 400px; /* Adjust height on mobile */
+            }
+
+            .sidebar h1 {
+                font-size: 1.5em; /* Reduce font size */
+            }
+
+            .sidebar p {
+                font-size: 1.2em;
+            }
+
+            .social-icons a {
+                font-size: 1.2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em; /* Adjust heading size */
+            }
+
+            .section-card h3 {
+                font-size: 1.3em; /* Adjust subheading size */
             }
         }
     </style>
