@@ -19,15 +19,19 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 250px; 
+            width: 0;
             height: 100vh;
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             display: flex;
-            align-items: flex-end;
+            align-items: flex-start;
             justify-content: center;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-            transition: width 0.3s;
+            background-color: #333; /* Added background color for visibility */
+            transition: width 0.3s ease; /* Smooth transition */
+            z-index: 999; /* Ensure it stays on top */
         }
 
         .sidebar img {
@@ -41,14 +45,12 @@
         }
 
         .sidebar .profile-text {
-            padding: auto;
-            position: absolute;
-            z-index: 1;
+            padding: 20px;
             color: #fff;
             text-align: center;
-            padding: 20px;
             width: 100%;
             box-sizing: border-box;
+            z-index: 1;
         }
 
         .sidebar h1 {
@@ -84,7 +86,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            transition: margin-left 0.3s;
+            transition: margin-left 0.3s ease; /* Smooth transition */
         }
 
         .section {
@@ -136,14 +138,10 @@
         @media (max-width: 480px) {
             .sidebar {
                 width: 0; /* Hide sidebar by default on mobile */
-                position: fixed;
-                height: 100vh;
-                overflow: hidden;
-                transition: width 0.3s;
             }
 
             .content {
-                margin-left: 0;
+                margin-left: 0; /* Default margin */
             }
 
             .menu-toggle {
@@ -165,7 +163,7 @@
             }
 
             .content.shift {
-                margin-left: 250px;
+                margin-left: 250px; /* Push content right */
             }
         }
 
@@ -287,12 +285,24 @@
             </div>
         </section>
 
-        <section class="section extracurricular">
+        <section class="section education">
+            <h2>Education</h2>
+            <div class="section-card">
+                <h3>Bachelor of Electronics and Communications Engineering</h3>
+                <p><strong>Future University in Egypt in collaboration with Missouri University of Science and Technology</strong> (2016 – 2021)</p>
+                <ul>
+                    <li>GPA: 2.95/4, Good, 5th in the department</li>
+                    <li>Graduation Project: I-Office for AI Application in IoT, Grade: Excellent</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section extracurricular-activities">
             <h2>Extracurricular Activities</h2>
             <div class="section-card">
                 <ul>
-                    <li>Member of SPE branch at FUE (Oct 2018 – Oct 2021)</li>
-                    <li>Member of Developer Student Clubs (DSC) – FUE (Dec 2019 – Jul 2021)</li>
+                    <li>Member of SPE Chapter at Future University in Egypt (Oct 2018 – Oct 2021)</li>
+                    <li>Member of Student Developers Clubs (DSC) - Future University in Egypt (Dec 2019 – Jul 2021)</li>
                 </ul>
             </div>
         </section>
