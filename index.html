@@ -137,7 +137,7 @@
             .sidebar {
                 width: 0; /* Hide sidebar by default on mobile */
                 position: fixed;
-                height: 95vh;
+                height: 100vh;
                 overflow: hidden;
                 transition: width 0.3s;
             }
@@ -167,11 +167,38 @@
             .content.shift {
                 margin-left: 250px;
             }
+
+            .personal-info-mobile {
+                display: block;
+                margin-top: 20px;
+                color: #ddd;
+            }
+
+            .personal-info-mobile ul {
+                list-style-type: none;
+                padding: 0;
+                font-size: 0.9em;
+            }
+
+            .personal-info-mobile a {
+                display: block;
+                color: #00bc8c;
+                text-decoration: none;
+                margin-bottom: 5px;
+            }
+
+            .personal-info-mobile a:hover {
+                text-decoration: underline;
+            }
         }
 
         @media (min-width: 481px) {
             .menu-toggle {
                 display: none; /* Hide menu toggle button on larger screens */
+            }
+
+            .personal-info-mobile {
+                display: none; /* Hide personal info section on larger screens */
             }
         }
     </style>
@@ -296,6 +323,19 @@
                 </ul>
             </div>
         </section>
+    </div>
+
+    <div class="personal-info-mobile">
+        <h2>Personal Information</h2>
+        <div class="section-card">
+            <ul>
+                <li>Nasr City, Cairo, Egypt</li>
+                <li>+201097396281</li>
+                <li>Date of birth: 29 Sep 1998</li>
+                <li><a href="mailto:shaherismail9@gmail.com">Email: shaherismail9@gmail.com</a></li>
+                <li><a href="http://linkedin.com/in/shaherismail" target="_blank">LinkedIn: Shaher Ismail Mohamed</a></li>
+            </ul>
+        </div>
     </div>
 
     <script>
