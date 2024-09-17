@@ -19,18 +19,15 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 250px;
+            width: 850px; 
             height: 100vh;
-            position: fixed; /* Change to fixed to keep it on top */
-            top: 0;
-            left: 0;
+            position: relative;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
             transition: width 0.3s;
-            background-color: #333; /* Add background color for visibility */
         }
 
         .sidebar img {
@@ -45,7 +42,7 @@
 
         .sidebar .profile-text {
             padding: auto;
-            position: relative;
+            position: absolute;
             z-index: 1;
             color: #fff;
             text-align: center;
@@ -82,7 +79,7 @@
 
         /* Content Styling */
         .content {
-            margin-left: 250px; /* Adjust margin to accommodate sidebar */
+            flex-grow: 1;
             padding: 40px;
             overflow-y: auto;
             display: flex;
@@ -102,7 +99,7 @@
             margin-bottom: 15px;
             display: flex;
         }
-
+        
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
@@ -136,23 +133,87 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative; /* Change to relative on mobile */
-                display: block;
-                top: 0;
-                left: 0;
+                width: 0; /* Hide sidebar by default on mobile */
+                position: fixed;
+                height: 95vh;
+                overflow: hidden;
+                transition: width 0.3s;
             }
 
             .content {
-                margin-left: 0; /* Adjust content margin on mobile */
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                font-size: 1.5em;
+                cursor: pointer;
+                color: #fff;
+                background-color: #333;
+                padding: 10px;
+                border-radius: 5px;
+                z-index: 1000;
+            }
+
+            .sidebar.show {
+                width: 250px; /* Show sidebar on mobile when toggled */
+            }
+
+            .content.shift {
+                margin-left: 250px;
+            }
+
+            /* Add text at the top of the page on mobile */
+            .mobile-header {
+                display: block;
+                text-align: center;
+                color: #fff;
+                padding: 10px;
+                background-color: #333;
+            }
+
+            /* Show additional information in Personal Information section on mobile */
+            .personal-info .extra-info {
+                display: block;
+            }
+
+            .sidebar .profile-text {
+                display: none; /* Hide profile text in sidebar on mobile */
+            }
+
+            .sidebar img {
+                height: 150px; /* Adjust the height for better fit on mobile */
+            }
+        }
+
+        @media (min-width: 481px) {
+            .menu-toggle {
+                display: none; /* Hide menu toggle button on larger screens */
+            }
+
+            .mobile-header {
+                display: none; /* Hide mobile header on larger screens */
+            }
+
+            .personal-info .extra-info {
+                display: none; /* Hide extra info on larger screens */
             }
         }
     </style>
 </head>
 <body>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+    
+    <div class="mobile-header">
+        <h1>Shaher Ismail Mohamed</h1>
+        <p>Electronic and Communication Engineer</p>
+    </div>
+
     <div class="sidebar">
         <img src="https://i.imgur.com/uxR0s80.png" alt="Profile Picture">
         <div class="profile-text">
@@ -160,10 +221,12 @@
             <p>Electronic and Communication Engineer</p>
             <div class="social-icons">
                 <a href="mailto:shaherismail9@gmail.com">✉</a>
-                <a href="http://linkedin.com/in/shaherismail" target="_blank">in</a>
+                <a href="mailto:ShaherIsmail9@gmail.com">📧</a>
+                <a href="http://linkedin.com/in/shaherismail" target="_blank">🔗</a>
             </div>
         </div>
     </div>
+
     <div class="content">
         <section class="section personal-info">
             <h2>Personal Information</h2>
@@ -172,6 +235,11 @@
                     <li>Nasr City, Cairo, Egypt</li>
                     <li>+201097396281</li>
                     <li>Date of birth: 29 Sep 1998</li>
+                    <li class="extra-info">
+                        <a href="mailto:shaherismail9@gmail.com">Email</a> |
+                        <a href="mailto:ShaherIsmail9@gmail.com">Google Email</a> |
+                        <a href="http://linkedin.com/in/shaherismail" target="_blank">LinkedIn</a>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -232,53 +300,71 @@
 
             <div class="section-card">
                 <h3>IT Engineer</h3>
-                <p><strong>6th of October Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
+                <p><strong>October 6 Military Hospital</strong> (Jun 2022 – Jun 2023)</p>
                 <ul>
-                    <li>Managed IT infrastructure and ensured system reliability.</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h3>Summer Training – Microchip Microcontrollers</h3>
-                <p><strong>JELECOM Company</strong> (Jun 2019 – Jul 2019)</p>
-                <ul>
-                    <li>Basic and advanced applications of Microchip microcontrollers.</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h3>Satellite Technology Course Level 1&2</h3>
-                <p><strong>Benha University Obour Campus in cooperation with Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
-                <ul>
-                    <li>Participated in satellite technology training programs.</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h3>Internal Summer Training</h3>
-                <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
-                <ul>
-                    <li>Engaged in basic training related to communication and electronics engineering.</li>
+                    <li>Worked on IT systems and support within the hospital environment.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="section online-courses">
-            <h2>Online Course and Certificate</h2>
+        <section class="section education">
+            <h2>Education</h2>
             <div class="section-card">
-                <p>Flutter at Variance Online Learning (Jan 2022)</p>
+                <h3>Bachelor's Degree in Electronics and Communication Engineering</h3>
+                <p><strong>Future University in Egypt in cooperation with Missouri University of Science and Technology</strong> (2016 – 2021)</p>
+                <ul>
+                    <li>GPA: 2.95/4, Good, Fifth in the Department</li>
+                    <li>Graduation Project: I-Office AIOT Application, Grade: Excellent</li>
+                </ul>
             </div>
         </section>
 
-        <section class="section extracurricular">
+        <section class="section certifications">
+            <h2>Certifications</h2>
+            <div class="section-card">
+                <ul>
+                    <li>Flutter – Variance Online Learning (Jan 2022)</li>
+                    <li>Satellite Technology Level 1 and 2 – Benha University - Obour Branch in cooperation with the Egyptian Space Agency (Aug 2020 – Sep 2020)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section training">
+            <h2>Training</h2>
+            <div class="section-card">
+                <h3>Microcontroller Applications – JELECOM</h3>
+                <p>Jun 2019 – Jul 2019</p>
+            </div>
+
+            <div class="section-card">
+                <h3>Advanced Microcontroller Applications – JELECOM</h3>
+                <p>Jul 2019</p>
+            </div>
+
+            <div class="section-card">
+                <h3>Summer Training – Future University</h3>
+                <p>Sep 2018</p>
+            </div>
+        </section>
+
+        <section class="section activities">
             <h2>Extracurricular Activities</h2>
             <div class="section-card">
                 <ul>
-                    <li>Member of SPE branch at FUE (Oct 2018 – Oct 2021)</li>
-                    <li>Member of Developer Student Clubs (DSC) – FUE (Dec 2019 – Jul 2021)</li>
+                    <li>Member of SPE Branch at Future University (Oct 2018 – Oct 2021)</li>
+                    <li>Member of Developer Student Clubs (DSC) - Future University (Dec 2019 – Jul 2021)</li>
                 </ul>
             </div>
         </section>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var content = document.querySelector('.content');
+            sidebar.classList.toggle('show');
+            content.classList.toggle('shift');
+        }
+    </script>
 </body>
 </html>
