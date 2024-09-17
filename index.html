@@ -13,43 +13,48 @@
             padding: 0;
             background-color: #1b1b1b;
             display: flex;
-            flex-direction: column;
             height: 100vh;
-            overflow: hidden;
+         
         }
 
         /* Sidebar Styling */
         .sidebar {
+            
             width: 850px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: #333;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            height: 100vh;
+            position: relative;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 1000;
-            transition: all 0.3s ease;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         }
 
         .sidebar img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 20px;
+            z-index: -1;
+            
+          
         }
 
         .sidebar .profile-text {
+            padding: auto;
+            position: absolute;
+            z-index: 1;
             color: #fff;
             text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .sidebar h1 {
-            font-size: 1.5em;
+            font-size: 2em;
             margin: 0;
         }
 
@@ -64,56 +69,60 @@
 
         .social-icons a {
             color: #ffffff;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
             font-size: 1.5em;
+            vertical-align: middle;
         }
 
         .social-icons a:hover {
-            color: #00bc8c;
+            color: #fff;
         }
 
         /* Content Styling */
         .content {
-            margin-left: 250px;
-            padding: 20px;
-            overflow-y: auto;
             flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .section h2 {
             color: #00bc8c;
-            font-size: 1.5em;
+            font-size: 1.8em;
             border-bottom: 2px solid #00bc8c;
             padding-bottom: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+       
         }
-
         .section-card h3 {
             color: #00bc8c;
-            font-size: 1.3em;
+            font-size: 1.6em;
             margin-bottom: 10px;
         }
 
         .section-card {
             background-color: #2e2e2e;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+          
+            
         }
-
         .section-card ul {
             list-style-type: none;
             padding: 0;
         }
 
         .section-card ul li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .section-card a {
@@ -123,30 +132,6 @@
 
         .section-card a:hover {
             text-decoration: underline;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                margin-bottom: 20px;
-                padding: 10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .sidebar img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .content {
-                margin: 0;
-                padding-top: 0;
-            }
         }
     </style>
 </head>
@@ -211,13 +196,13 @@
             </div>
         </section>
 
+    
         <section class="section objective">
             <h2>Objective</h2>
             <div class="section-card">
                 <p>Seeking a challenging position in a reputable organization in the field of electronic and communication engineering where I can enhance and leverage my interpersonal skills and academic knowledge to make a positive and significant contribution to the success of the organization in multiple disciplines of the engineering field.</p>
             </div>
         </section>
-
         <section class="section education">
             <h2>Education</h2>
             <div class="section-card">
@@ -226,7 +211,6 @@
                 <p>Graduation Project: I-Office for Applying Artificial Intelligence on the Internet of Things (AIOT), Grade: Excellent</p>
             </div>
         </section>
-
         <section class="section experience">
             <h2>Work Experience</h2>
             <div class="section-card">
@@ -265,7 +249,7 @@
                 <h3>Internal Summer Training</h3>
                 <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
                 <ul>
-                    <li>Gained experience in various aspects of electronics and communication.</li>
+                    <li>Engaged in basic training related to communication and electronics engineering.</li>
                 </ul>
             </div>
         </section>
