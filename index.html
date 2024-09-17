@@ -14,12 +14,13 @@
             background-color: #1b1b1b;
             display: flex;
             height: 100vh;
-            overflow: hidden; /* Prevent scrollbars */
+         
         }
 
         /* Sidebar Styling */
         .sidebar {
-            width: 850px; 
+            
+            width: 850px;
             height: 100vh;
             position: relative;
             display: flex;
@@ -27,7 +28,6 @@
             justify-content: center;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-            transition: width 0.3s;
         }
 
         .sidebar img {
@@ -38,6 +38,8 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            
+          
         }
 
         .sidebar .profile-text {
@@ -84,7 +86,6 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            transition: margin-left 0.3s;
         }
 
         .section {
@@ -98,8 +99,8 @@
             padding-bottom: 5px;
             margin-bottom: 15px;
             display: flex;
+       
         }
-        
         .section-card h3 {
             color: #00bc8c;
             font-size: 1.6em;
@@ -112,8 +113,9 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+          
+            
         }
-
         .section-card ul {
             list-style-type: none;
             padding: 0;
@@ -131,55 +133,23 @@
         .section-card a:hover {
             text-decoration: underline;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 480px) {
+         @media (max-width: 480px) {
             .sidebar {
-                width: 0; /* Hide sidebar by default on mobile */
-                position: fixed;
-                height: 95vh;
-                overflow: hidden;
-                transition: width 0.3s;
+                display: none;}
+             .personal-info {
+                display: none;}
             }
-            .personal-info{display: none;}
-
-            .content {
-                margin-left: 0;
-            }
-
-            .menu-toggle {
-                display: block;
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                font-size: 1.5em;
-                cursor: pointer;
-                color: #fff;
-                background-color: #333;
-                padding: 10px;
-                border-radius: 5px;
-                z-index: 1000;
-            }
-
-            .sidebar.show {
-                width: 250px; /* Show sidebar on mobile when toggled */
-            }
-
-            .content.shift {
-                margin-left: 250px;
-            }
-        }
-
-        @media (min-width: 481px) {
-            .menu-toggle {
+         @media (min-width: 481px) {
+            .profile-text-mobile {
                 display: none; /* Hide menu toggle button on larger screens */
             }
-            .personal-info-mobile{display: none;}
+             .personal-info-mobile {
+                display: none; /* Hide menu toggle button on larger screens */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
     <div class="sidebar">
         <img src="https://i.imgur.com/uxR0s80.png" alt="Profile Picture">
         <div class="profile-text">
@@ -190,6 +160,10 @@
                 <a href="http://linkedin.com/in/shaherismail" target="_blank">in</a>
             </div>
         </div>
+    </div>
+    <div class="profile-text-mobile">
+            <h1>Shaher Ismail Mohamed</h1>
+            <p>Electronic and Communication Engineer</p>
     </div>
     <div class="content">
         <section class="section personal-info">
@@ -202,14 +176,16 @@
                 </ul>
             </div>
         </section>
- <section class="section personal-info-mobile">
+<div class="content">
+        <section class="section personal-info-mobile">
             <h2>Personal Information</h2>
             <div class="section-card">
                 <ul>
                     <li>Nasr City, Cairo, Egypt</li>
                     <li>+201097396281</li>
                     <li>Date of birth: 29 Sep 1998</li>
-                    <li>shaherismail9@gmail.com</li>
+                    <li>shaherismail9@gmail,com</li>
+                    <li>http://linkedin.com/in/shaherismail</li>
                 </ul>
             </div>
         </section>
@@ -284,6 +260,14 @@
             </div>
 
             <div class="section-card">
+                <h3>Satellite Technology Course Level 1&2</h3>
+                <p><strong>Benha University Obour Campus in cooperation with Egyptian Space Agency</strong> (Aug 2020 – Sep 2020)</p>
+                <ul>
+                    <li>Participated in satellite technology training programs.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
                 <h3>Internal Summer Training</h3>
                 <p><strong>Future University in Egypt (FUE)</strong> (Sep 2018)</p>
                 <ul>
@@ -309,14 +293,5 @@
             </div>
         </section>
     </div>
-
-    <script>
-        function toggleSidebar() {
-            var sidebar = document.querySelector('.sidebar');
-            var content = document.querySelector('.content');
-            sidebar.classList.toggle('show');
-            content.classList.toggle('shift');
-        }
-    </script>
 </body>
 </html>
